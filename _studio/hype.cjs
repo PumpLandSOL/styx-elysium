@@ -10,5 +10,5 @@ record({ site: SITE + '/', out: path.join(__dirname, '..', 'brand', 'styx-hype-1
   await ev("window.__title('Shield it.<br><i>It forgets.</i>','amount hidden · parties hidden · a note only you can read','solid')"); await sleep(1800);
   await ev("window.__title('sUSD.<br>Backed <em>and</em> algorithmic.','USDC collateral + a burned STYX share · pegged $1','solid')"); await sleep(1800);
   await ev('window.__titleHide()'); await sleep(1400);
-  await ev("window.__title('<em>STYX</em>','private money, carried unseen · styxely.xyz · $STYX','solid')"); await sleep(1400);
+  await ev("window.__title('<em>STYX</em>','private money, carried unseen · styxelysium.com · $STYX','solid')"); await sleep(1400);
 } }).catch((e) => { console.error(e); process.exit(1); });

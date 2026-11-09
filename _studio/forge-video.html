@@ -54,7 +54,7 @@ window.__seek = function (t) {
     for (const s of SPARKS) { const life = ((t * .9 + s.hot) % 1); const r = s.v * life * .25; coin(W / 2 + Math.cos(s.a) * r, 400 - Math.abs(Math.sin(s.a)) * r * .8 - life * 60, a * (1 - life) * k, s.sz, s.hot > .5 ? ORANGE : GOLD2); } }
   if (t >= 8.6) { const cr = seg(t, 8.6, 9.1);
     if (t < 9.5) { const fa = 1 - seg(t, 9.1, 9.5); ingot(W / 2, 400, 420, 120, 1, fa, cr); lock(W / 2, 290, fa, true); g.globalAlpha = fa; txt('UNLOCK · principal + yield', W / 2, 560, 30, GOLD2, 'Cinzel', 800, 'center', 4); g.globalAlpha = 1; }
-    const b = seg(t, 9.25, 9.65); g.globalAlpha = b; txt('STYX', W / 2, H / 2 - 30, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxely.xyz/?tab=bond', W / 2, H / 2 + 60, 30, GOLD2, 'JetBrains Mono', 500, 'center', 2); txt('the forge is lit · −30% · 48h lock · 80% APY', W / 2, H / 2 + 110, 20, MUT, 'JetBrains Mono', 500, 'center', 3); g.globalAlpha = 1; }
+    const b = seg(t, 9.25, 9.65); g.globalAlpha = b; txt('STYX', W / 2, H / 2 - 30, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxelysium.com/?tab=bond', W / 2, H / 2 + 60, 30, GOLD2, 'JetBrains Mono', 500, 'center', 2); txt('the forge is lit · −30% · 48h lock · 80% APY', W / 2, H / 2 + 110, 20, MUT, 'JetBrains Mono', 500, 'center', 3); g.globalAlpha = 1; }
   return true;
 };
 window.__ready = document.fonts.ready.then(() => { __seek(0); return true; });

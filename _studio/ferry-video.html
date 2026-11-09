@@ -43,7 +43,7 @@ window.__seek = function (t) {
   // 6.2–8.4 the math
   if (t >= 6.2 && t < 8.5) { const a = fadeIO(t, 6.2, 8.5, .3); g.globalAlpha = a; txt('NOT A ONE-TIME BONUS.', W / 2, H / 2 - 70, 58, MUT, 'Cinzel', 800, 'center', 4); g.globalAlpha = a * seg(t, 6.8, 7.3); g.shadowColor = 'rgba(233,207,149,.6)'; g.shadowBlur = 30; txt('A CUT OF THEIR TOLLS FOREVER.', W / 2, H / 2 + 20, 58, GOLD2, 'Cinzel', 800, 'center', 4); g.shadowBlur = 0; g.globalAlpha = a; txt('one referrer per wallet · set once · never changed · the pyre takes the other 80%', W / 2, H / 2 + 110, 22, MUT, 'EB Garamond', 400); g.globalAlpha = 1; }
   // 8.4–10 outro
-  if (t >= 8.4) { const a = seg(t, 8.4, 8.8); g.globalAlpha = a; txt('STYX', W / 2, H / 2 - 10, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxely.xyz/?ref=YOU  ·  $STYX  ·  refer someone', W / 2, H / 2 + 80, 22, MUT, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
+  if (t >= 8.4) { const a = seg(t, 8.4, 8.8); g.globalAlpha = a; txt('STYX', W / 2, H / 2 - 10, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxelysium.com/?ref=YOU  ·  $STYX  ·  refer someone', W / 2, H / 2 + 80, 22, MUT, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
   return true;
 };
 window.__ready = document.fonts.ready.then(() => { __seek(0); return true; });

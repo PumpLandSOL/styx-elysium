@@ -118,7 +118,7 @@ window.__seek = function (t) {
     S.note = 'Send shielded sUSD. Or write a Note: no address needed. Lock the amount'; S.note2 = 'behind a link and send the link to anyone.';
     S.input = typeIn(t, 10.9, 11.3, '100'); S.unit = 'sUSD'; S.max = true;
     S.kv = [['Your private balance', '████']]; S.btns = [{ t: 'SEND PRIVATELY', fill: false }, { t: 'CREATE PAY LINK', fill: true }];
-    if (t > 12.3) S.link = 'styxely.xyz/#claim=7Kq2mNw8sVxP4cL9';
+    if (t > 12.3) S.link = 'styxelysium.com/#claim=7Kq2mNw8sVxP4cL9';
     tablet(S);
     const tb = S._tab(3), f = S._field, b = S._btns[1];
     if (t < 10.6) { const k = ease(seg(t, 10.3, 10.6)); cur = { x: lerp(640, tb.x, k), y: lerp(600, tb.y, k) }; } else if (t < 10.8) { cur = tb; click = seg(t, 10.6, 10.8); } else if (t < 11.4) { const k = ease(seg(t, 10.8, 11.0)); cur = { x: lerp(tb.x, f.x, k), y: lerp(tb.y, f.y, k) }; } else if (t < 11.8) { const k = ease(seg(t, 11.4, 11.8)); cur = { x: lerp(f.x, b.x, k), y: lerp(f.y, b.y, k) }; } else if (t < 12.6 || !S._copy) cur = b; else { const k = ease(seg(t, 12.6, 12.9)); cur = { x: lerp(b.x, S._copy.x, k), y: lerp(b.y, S._copy.y, k) }; if (t >= 12.9 && t < 13.2) click = seg(t, 12.9, 13.2); }
@@ -127,7 +127,7 @@ window.__seek = function (t) {
     step(4, 'PAY ANYONE', 'Write a Note. The link carries the|money. No address, no name. Whoever|opens it claims it, unseen.', S.a);
   }
   // ── 13.6–15  OUTRO
-  else { const a = seg(t, 13.6, 14.0); g.globalAlpha = a; txt('THAT IS THE CROSSING.', W / 2, H / 2 - 50, 52, INK, 'Cinzel', 800, 'center', 5); txt('deposit · mint · shield · pay', W / 2, H / 2 + 14, 22, DIM, 'JetBrains Mono', 500, 'center', 3); txt('styxely.xyz  ·  $STYX', W / 2, H / 2 + 70, 24, GOLD, 'Cinzel', 700, 'center', 3); g.globalAlpha = 1; return true; }
+  else { const a = seg(t, 13.6, 14.0); g.globalAlpha = a; txt('THAT IS THE CROSSING.', W / 2, H / 2 - 50, 52, INK, 'Cinzel', 800, 'center', 5); txt('deposit · mint · shield · pay', W / 2, H / 2 + 14, 22, DIM, 'JetBrains Mono', 500, 'center', 3); txt('styxelysium.com  ·  $STYX', W / 2, H / 2 + 70, 24, GOLD, 'Cinzel', 700, 'center', 3); g.globalAlpha = 1; return true; }
 
   toast(tst[0], tst[1]); cursor(cur.x, cur.y, click);
   // progress dots

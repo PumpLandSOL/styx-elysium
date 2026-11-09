@@ -1,6 +1,6 @@
 # STYX — X (Twitter) Kit
 
-**Handle:** @styxrh · **URL:** x.com/styxrh · **Site:** styxely.xyz
+**Handle:** @styxrh · **URL:** x.com/styxrh · **Site:** styxelysium.com
 **Palette:** antique gold `#50e3c2` · verdigris `#3ee0a0` · black stone `#04100d`
 **Type:** Cinzel (display) · EB Garamond (body) · JetBrains Mono (data)
 
@@ -28,7 +28,7 @@ Regenerate: `cd styx/_studio && node build.js && node render.js`
 **Bio (≤160):**
 > Private dollars on Elysium. sUSD — a fractional-algorithmic stablecoin you carry unseen. Shield it and the amount & both parties vanish from the ledger. ⚱
 
-**Location:** `the crossing` · **Website:** `styxely.xyz`
+**Location:** `the crossing` · **Website:** `styxelysium.com`
 
 ---
 
@@ -40,7 +40,7 @@ Regenerate: `cd styx/_studio && node build.js && node render.js`
 > sUSD is a private, fractional-algorithmic stablecoin on Elysium. Hold it. Send it. And when you shield it, the amount & both parties vanish from the ledger.
 >
 > Private money, carried unseen.
-> styxely.xyz
+> styxelysium.com
 
 **2/ (attach `styx-howitworks.png`)**
 > Three rites:
@@ -63,7 +63,7 @@ Regenerate: `cd styx/_studio && node build.js && node render.js`
 >
 > Public when you choose. Hidden when you don't.
 >
-> ⚱ styxely.xyz
+> ⚱ styxelysium.com
 > $STYX — CA dropping soon. Turn on notifs. 🔔
 
 ---
@@ -105,7 +105,7 @@ Reflexive backing loops forever. Exogenous backing terminates.
 
 Not yield. Plumbing.
 
-styxely.xyz
+styxelysium.com
 
 ### Short version (≤160 chars)
 LUNA printed $1 of itself per UST redeemed. No cap, no collateral. $40B to $0.
@@ -130,7 +130,7 @@ Privacy usage → permanent scarcity.
 
 The burn is public. The payer never is.
 
-styxely.xyz
+styxelysium.com
 
 ### Short (≤160)
 Every private payment now burns $STYX. 30 bps toll on shield/send/unshield, 50 on redeem, bought back at market, burned with a receipt. The Pyre is lit. 🔥
@@ -154,7 +154,7 @@ $STYX, the whole stack in one picture:
 
 Every crossing pays a toll. The toll burns $STYX. 🔥
 
-styxely.xyz
+styxelysium.com
 
 ---
 
@@ -185,7 +185,7 @@ Also live:
 
 Open now → Oct 11. 5M $STYX pool. 250K sUSD cap.
 
-styxely.xyz
+styxelysium.com
 
 ### Short (274 chars)
 The Vigil: stake sUSD, 40% APY paid in $STYX from a pre-funded pool, for 30 days. Then it ends.
@@ -194,7 +194,7 @@ Anchor's 20% was permanent and became the peg. A yield with an end date can't.
 
 Also: real USDC deposits to the treasury, verified on-chain. Nothing printed to mint.
 
-styxely.xyz
+styxelysium.com
 
 Video: `brand/styx-vigil-15s.mp4` (15s, 1280x720, locked 30fps, rendered) — pair with the main Vigil tweet.
 
@@ -207,7 +207,7 @@ Anchor never ended. That's the problem.
 
 Real USDC deposits, verified on-chain. Nothing printed to mint.
 
-styxely.xyz
+styxelysium.com
 
 ---
 
@@ -223,7 +223,7 @@ THE SEAL: a read-only view key. Hand it to your accountant, a partner, a regulat
 
 Pay anyone. Prove it to one person. Hide it from everyone else.
 
-styxely.xyz
+styxelysium.com
 
 ### Short (≤275)
 Rite III is live on $STYX.
@@ -233,7 +233,7 @@ THE SEAL: a read-only view key. Prove your balance to one person, hide it from e
 
 Pay anyone. Prove it to one. Hide it from all.
 
-styxely.xyz
+styxelysium.com
 
 
 ---
@@ -247,7 +247,7 @@ Zcash is privacy with no dollar.
 
 sUSD is the third thing: a private dollar with a floor. 55% hard USDC minimum, view keys, pay-by-link, every use burns $STYX.
 
-styxely.xyz
+styxelysium.com
 
 How-to (hands-on): `brand/styx-howto-15s.mp4` — 15s drawn walkthrough of deposit → mint → shield → pay-by-link with a live cursor; not a screen recording.
 
@@ -261,7 +261,7 @@ How to cross, in 15 seconds:
 
 That's private money.
 
-styxely.xyz
+styxelysium.com
 
 
 ---
@@ -276,7 +276,7 @@ sUSD is the private dollar. Shielded, pegged, 55% hard USDC floor, pay anyone by
 
 $STYX is $132K today. 1% of ZEC's cap is $199M.
 
-styxely.xyz
+styxelysium.com
 
 
 ---
@@ -291,13 +291,13 @@ Anyone who claims your Note or joins through your link is your referral. You ear
 
 Not a one-time bonus. A cut of their crossings for life.
 
-styxely.xyz/?ref=you
+styxelysium.com/?ref=you
 
 
 ---
 
 ## BONDS + VIGIL BOOST
-Video: `brand/styx-bonds-10s.mp4` (10s, rendered) · deposit link: styxely.xyz/?tab=bond
+Video: `brand/styx-bonds-10s.mp4` (10s, rendered) · deposit link: styxelysium.com/?tab=bond
 
 ### Tweet (276 chars)
 $STYX is on sale. Bonds are live.
@@ -308,7 +308,7 @@ Vigil boosted: 40% → 100% APY on staked sUSD this week.
 
 Daily cap. First come, first served.
 
-styxely.xyz/?tab=bond
+styxelysium.com/?tab=bond
 
 ---
 
@@ -321,7 +321,7 @@ STYX stands alone: the only algorithmic private stablecoin on Elysium, and the o
 
 A dollar you carry unseen. $STYX
 
-styxely.xyz
+styxelysium.com
 
 ### Unassailable (279)
 Privacy is the future. Everyone says it. Nobody builds the dollar.
@@ -330,7 +330,7 @@ STYX is the first and only private algorithmic stablecoin on Elysium. Not a coin
 
 One of one. $STYX
 
-styxely.xyz
+styxelysium.com
 
 Graphic: `brand/styx-one-of-one.png` (quadrant map: stable×private, sUSD alone)
 
@@ -338,7 +338,7 @@ Graphic: `brand/styx-one-of-one.png` (quadrant map: stable×private, sUSD alone)
 ---
 
 ## THE DARK POOL — private stock exposure
-Video: `brand/styx-darkpool-10s.mp4` (10s, rendered) · link: styxely.xyz/?tab=dark
+Video: `brand/styx-darkpool-10s.mp4` (10s, rendered) · link: styxelysium.com/?tab=dark
 
 ### Tweet (331 chars)
 The Dark Pool is live on $STYX.
@@ -349,7 +349,7 @@ Not anymore. Commit shielded sUSD to HOOD, TSLA, NVDA, SPY. Long or short, off t
 
 The first private stock desk on Elysium.
 
-styxely.xyz/?tab=dark
+styxelysium.com/?tab=dark
 
 ---
 
@@ -368,7 +368,7 @@ Day one complete ⚱
 ✅ Referrals
 ✅ Dark Pool
 
-styxely.xyz
+styxelysium.com
 0xdbd2bd1a734d2b3dc8f88bacc404810fcbff36c4
 
 ---
@@ -386,7 +386,7 @@ $STYX hit $500K on day one with both, plus a 55% USDC floor, staking, bonds, ref
 1% of LUNA = $400M
 1% of ZEC = $199M
 
-styxely.xyz
+styxelysium.com
 
 ### Tweet v2 (short, 226 chars)
 LUNA: $40B, no floor, dead in 6 days.
@@ -397,7 +397,7 @@ $STYX day one: $500K. Private dollar, 55% USDC floor, Vigil staking, Bonds, Dark
 1% of LUNA = $400M
 1% of ZEC = $199M
 
-styxely.xyz
+styxelysium.com
 
 ---
 
@@ -413,4 +413,4 @@ And while it's locked, it earns 80% APY in $STYX. Paid from a fixed pool. Nothin
 
 Bond. Lock. Earn. Unlock.
 
-styxely.xyz/?tab=bond
+styxelysium.com/?tab=bond

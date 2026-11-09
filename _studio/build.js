@@ -93,7 +93,7 @@ assets['styx-banner'] = page(3000, 1000, `
      <div class="mid">
        <div class="h ci">Private money,<br><em>carried unseen.</em></div>
        <div class="sub">A fractional-algorithmic stablecoin you hold &amp; send privately — the coin paid across the river.</div>
-       <div class="chips"><div class="chip mo"><b>sUSD</b> · pegged $1</div><div class="chip mo">shielded</div><div class="chip mo">styxely.xyz</div></div>
+       <div class="chips"><div class="chip mo"><b>sUSD</b> · pegged $1</div><div class="chip mo">shielded</div><div class="chip mo">styxelysium.com</div></div>
      </div>
    </div>`);
 

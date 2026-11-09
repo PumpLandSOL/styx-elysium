@@ -48,7 +48,7 @@ window.__seek = function (t) {
   // 6.4–8.4 boost
   if (t >= 6.4 && t < 8.5) { const a = fadeIO(t, 6.4, 8.5, .3); g.globalAlpha = a; txt('AND THE VIGIL', W / 2, H / 2 - 110, 30, MUT, 'JetBrains Mono', 500, 'center', 8); txt('40%', W / 2 - 220, H / 2, 90, MUT, 'Cinzel', 800, 'center', 2); txt('→', W / 2 - 40, H / 2, 70, GOLD, 'Cinzel', 800, 'center'); g.globalAlpha = a * seg(t, 6.9, 7.3); g.shadowColor = 'rgba(143,209,180,.7)'; g.shadowBlur = 36; txt('100%', W / 2 + 170, H / 2, 110, VERD2, 'Cinzel', 800, 'center', 2); g.shadowBlur = 0; g.globalAlpha = a; txt('APY on staked sUSD · this week only · paid from a fixed $STYX pool', W / 2, H / 2 + 100, 24, MUT, 'EB Garamond', 400); g.globalAlpha = 1; }
   // 8.4–10 outro
-  if (t >= 8.4) { const a = seg(t, 8.4, 8.8); g.globalAlpha = a; txt('STYX', W / 2, H / 2 - 30, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxely.xyz/?tab=bond', W / 2, H / 2 + 60, 30, GOLD2, 'JetBrains Mono', 500, 'center', 2); txt('deposit USDC · bond · stake', W / 2, H / 2 + 110, 20, MUT, 'JetBrains Mono', 500, 'center', 3); g.globalAlpha = 1; }
+  if (t >= 8.4) { const a = seg(t, 8.4, 8.8); g.globalAlpha = a; txt('STYX', W / 2, H / 2 - 30, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxelysium.com/?tab=bond', W / 2, H / 2 + 60, 30, GOLD2, 'JetBrains Mono', 500, 'center', 2); txt('deposit USDC · bond · stake', W / 2, H / 2 + 110, 20, MUT, 'JetBrains Mono', 500, 'center', 3); g.globalAlpha = 1; }
   return true;
 };
 window.__ready = document.fonts.ready.then(() => { __seek(0); return true; });

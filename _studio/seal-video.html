@@ -39,7 +39,7 @@ window.__seek = function (t) {
     g.globalAlpha = a; g.strokeStyle = 'rgba(80,227,194,.25)'; g.setLineDash([6, 10]); g.lineWidth = 2; g.beginPath(); g.moveTo(200, 400); g.lineTo(1080, 400); g.stroke(); g.setLineDash([]);
     txt('you', 200, 470, 22, MUT, 'JetBrains Mono', 500, 'center', 4); txt('anyone', 1080, 470, 22, MUT, 'JetBrains Mono', 500, 'center', 4);
     redact(1000, 500, 160, 30, a); txt('recipient', 1080, 555, 16, MUT, 'JetBrains Mono', 500, 'center', 3); g.globalAlpha = 1;
-    pill(x, 400, 420, 'styxely.xyz/#claim=7Kq2…xP4c', a, GOLD);
+    pill(x, 400, 420, 'styxelysium.com/#claim=7Kq2…xP4c', a, GOLD);
     const kb = seg(t, 4.3, 4.9); if (kb > 0) { g.globalAlpha = a * kb; txt('+ ████ sUSD claimed · unseen', 1000, 320 - kb * 10, 24, VERD2, 'Cinzel', 700, 'center', 2); g.globalAlpha = 1; }
   }
 
@@ -59,7 +59,7 @@ window.__seek = function (t) {
   }
 
   // ── 8.2–10 outro
-  if (t >= 8.2) { const a = seg(t, 8.2, 8.6); g.globalAlpha = a; txt('RITE III', W / 2, H / 2 - 90, 26, VERD, 'JetBrains Mono', 500, 'center', 10); txt('STYX', W / 2, H / 2, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxely.xyz  ·  $STYX  ·  the note & the seal are live', W / 2, H / 2 + 90, 22, MUT, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
+  if (t >= 8.2) { const a = seg(t, 8.2, 8.6); g.globalAlpha = a; txt('RITE III', W / 2, H / 2 - 90, 26, VERD, 'JetBrains Mono', 500, 'center', 10); txt('STYX', W / 2, H / 2, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxelysium.com  ·  $STYX  ·  the note & the seal are live', W / 2, H / 2 + 90, 22, MUT, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
   return true;
 };
 window.__ready = document.fonts.ready.then(() => { __seek(0); return true; });

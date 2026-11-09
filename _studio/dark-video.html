@@ -52,7 +52,7 @@ window.__seek = function (t) {
   // 6.6–8.5 punch
   if (t >= 6.6 && t < 8.6) { const a = fadeIO(t, 6.6, 8.6, .3); g.globalAlpha = a; txt('THE FIRST PRIVATE STOCK DESK', W / 2, H / 2 - 60, 54, INK, 'Cinzel', 800, 'center', 4); g.globalAlpha = a * seg(t, 7.0, 7.4); g.shadowColor = 'rgba(80,227,194,.6)'; g.shadowBlur = 30; txt('ON ROBINHOOD CHAIN.', W / 2, H / 2 + 30, 60, GOLD2, 'Cinzel', 800, 'center', 4); g.shadowBlur = 0; g.globalAlpha = a; txt('HOOD · TSLA · NVDA · SPY · COIN · MSTR · AAPL · GLD · BTC · ETH  ·  30 bps to the pyre', W / 2, H / 2 + 115, 20, MUT, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
   // 8.5–10 outro
-  if (t >= 8.5) { const a = seg(t, 8.5, 8.9); g.globalAlpha = a; txt('STYX', W / 2, H / 2 - 20, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxely.xyz/?tab=dark  ·  $STYX', W / 2, H / 2 + 70, 26, GOLD2, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
+  if (t >= 8.5) { const a = seg(t, 8.5, 8.9); g.globalAlpha = a; txt('STYX', W / 2, H / 2 - 20, 96, GOLD, 'Cinzel', 800, 'center', 22); txt('styxelysium.com/?tab=dark  ·  $STYX', W / 2, H / 2 + 70, 26, GOLD2, 'JetBrains Mono', 500, 'center', 2); g.globalAlpha = 1; }
   return true;
 };
 window.__ready = document.fonts.ready.then(() => { __seek(0); return true; });

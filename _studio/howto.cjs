@@ -26,5 +26,5 @@ record({ site: SITE + '/?w=' + W + '&tab=mint', out: path.join(__dirname, '..', 
   await ev("document.getElementById('b-priv-eye').click()"); await sleep(1000);
   await ev("window.__cap('your ledger','Public 400 · unseen 350. <b>Reveal</b> shows it only to you.')"); await sleep(1800);
   await ev('window.__capHide()'); await sleep(100);
-  await ev("window.__title('<em>STYX</em>','strike · shield · send unseen · styxely.xyz','solid')"); await sleep(1500);
+  await ev("window.__title('<em>STYX</em>','strike · shield · send unseen · styxelysium.com','solid')"); await sleep(1500);
 } }).catch((e) => { console.error(e); process.exit(1); });

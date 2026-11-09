@@ -20,13 +20,13 @@ Also live:
 
 Sep 11 → Oct 11. 5M $STYX pool. 250K sUSD cap.
 
-styxely.xyz`;
+styxelysium.com`;
 const short = `The Vigil: stake sUSD, 40% APY paid in $STYX from a pre-funded pool, for 30 days. Then it ends.
 
 Anchor's 20% was permanent and became the peg. A yield with an end date can't.
 
 Also: real USDC deposits to the treasury, verified on-chain. Nothing printed to mint.
 
-styxely.xyz`;
+styxelysium.com`;
 fs.appendFileSync(path.join(R, 'X-KIT.md'), `\n\n---\n\n## THE VIGIL — real deposits + temporary staking\nGraphic: \`brand/styx-vigil.png\`\n\n### Main tweet\n${main}\n\n### Short (${short.length} chars)\n${short}\n`);
 console.log('short tweet chars:', short.length);

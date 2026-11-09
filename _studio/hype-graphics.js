@@ -27,7 +27,7 @@ const HEAD = `<!doctype html><html><head><meta charset="utf-8"><link href="https
 .led span:first-child{color:var(--mut);width:180px}.led span:nth-child(2){color:var(--dim);flex:1}.led span:last-child{color:var(--verd)}
 .led .k{color:var(--red)!important}
 </style></head><body><div class="stage"><div class="grain"></div><div class="wrap">`;
-const FOOT = (t) => `</div><div class="foot"><b>styxely.xyz</b> · ${t}</div></div></body></html>`;
+const FOOT = (t) => `</div><div class="foot"><b>styxelysium.com</b> · ${t}</div></div></body></html>`;
 const G = {
   'styx-hype-redacted': HEAD + `<div class="eye ci">The first private dollar on Elysium</div><div class="big ci"><span class="red" style="width:560px;height:130px"></span> by <em>default.</em></div><div class="sub">Shield sUSD and your balance, your amount and your counterparty vanish from the ledger. Everyone else sees a black bar.</div>
     <div class="led"><div><span>#4127</span><span>shield · commitment 7Kq9…w2Ff</span><span class="red" style="width:180px;height:38px"></span></div><div><span>#4128</span><span>private · nullifier Hx3d…9pLm · proof ✓</span><span class="red" style="width:180px;height:38px"></span></div><div><span>#4129</span><span>private · nullifier Qa71…c0Rt · proof ✓</span><span class="red" style="width:180px;height:38px"></span></div></div>` + FOOT('sUSD · $STYX · private money, carried unseen'),

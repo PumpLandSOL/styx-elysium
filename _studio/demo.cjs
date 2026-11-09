@@ -10,7 +10,7 @@ const post = (u, b) => fetch(SITE + u, { method: 'POST', headers: { 'content-typ
   await post('/api/mint', { amount: 1500 }); await post('/api/shield', { amount: 900 }); await post('/api/send', { to: '0x1c9e4b7a2d5f8c3e6a9b1d4f7c0e3a6b9d2f5c8e', amount: 250 });
   await record({ site: SITE + '/?w=' + W + '&tab=mint', out: path.join(__dirname, '..', 'brand', 'styx-demo-15s.mp4'), port: 9472, script: async ({ ev, sleep }) => {
     await ev(OVERLAY, true); await sleep(900);
-    await ev("window.__cap('styxely.xyz','A private, fractional-algorithmic stablecoin on <b>Elysium.</b>')"); await sleep(1500);
+    await ev("window.__cap('styxelysium.com','A private, fractional-algorithmic stablecoin on <b>Elysium.</b>')"); await sleep(1500);
     await ev('window.__capHide()');
     await ev("window.__scrollToSel('#demo',1000,.08)", true);
     await ev("window.__cap('rite I · strike','Post USDC collateral, burn a small STYX share, <b>mint $1 sUSD.</b>')"); await sleep(1900);
@@ -22,6 +22,6 @@ const post = (u, b) => fetch(SITE + u, { method: 'POST', headers: { 'content-typ
     await ev("window.__scrollToSel('#feed',900,.2)", true);
     await ev("window.__cap('the unseen ledger','Real commitments, nullifiers and a Merkle root, <b>live.</b>')"); await sleep(1800);
     await ev('window.__capHide()'); await sleep(100);
-    await ev("window.__title('<em>STYX</em>','private money, carried unseen · styxely.xyz · $STYX','solid')"); await sleep(1500);
+    await ev("window.__title('<em>STYX</em>','private money, carried unseen · styxelysium.com · $STYX','solid')"); await sleep(1500);
   } });
 })().catch((e) => { console.error(e); process.exit(1); });

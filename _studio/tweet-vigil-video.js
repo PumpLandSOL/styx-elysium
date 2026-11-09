@@ -7,7 +7,7 @@ Anchor never ended. That's the problem.
 
 Real USDC deposits, verified on-chain. Nothing printed to mint.
 
-styxely.xyz`;
+styxelysium.com`;
 let s = fs.readFileSync(K, 'utf8'); const i = s.lastIndexOf('### Video tweet');
 s = s.slice(0, i) + `### Video tweet (${[...t].length} chars)\n` + t + '\n'; fs.writeFileSync(K, s);
 console.log([...t].length); console.log(t);

@@ -46,7 +46,7 @@ h = rep(h, "  <!-- THE VIGIL -->", `  <!-- CHARON'S CUT -->
   </div>
 
   <!-- THE VIGIL -->`);
-h = rep(h, "<details><summary>What is a Note?</summary>", `<details><summary>What is Charon&rsquo;s Cut?</summary><div class="a">A referral engine built into the Note. When someone claims your Note or connects through your ferry link (<b>styxely.xyz/?ref=your-address</b>) for the first time, they are bound to you. <b>20% of every toll they pay from then on</b> is credited to your public sUSD balance, forever. The remaining 80% still goes to The Pyre. One ferryman per soul, set once, never changed.</div></details>
+h = rep(h, "<details><summary>What is a Note?</summary>", `<details><summary>What is Charon&rsquo;s Cut?</summary><div class="a">A referral engine built into the Note. When someone claims your Note or connects through your ferry link (<b>styxelysium.com/?ref=your-address</b>) for the first time, they are bound to you. <b>20% of every toll they pay from then on</b> is credited to your public sUSD balance, forever. The remaining 80% still goes to The Pyre. One ferryman per soul, set once, never changed.</div></details>
     <details><summary>What is a Note?</summary>`);
 fs.writeFileSync(H, h);
 
