@@ -16,7 +16,7 @@ const T = [
 ['Day one', 'styx-day-one.png', `Day one on Elysium: complete.\n\nEverything on this sheet is live. Not a roadmap. A receipt.\n\nConnect, deposit USDC, strike sUSD, cross unseen.\n\n${S}\n\n$STYX`],
 ['Why Elysium', 'styx-pillars.png', `Why Elysium?\n\nHyperliquid's L2 brings HYPE gas, HyperEVM settlement and the deepest onchain trader base in crypto. What it didn't have was a private dollar.\n\nNow it does.\n\n$STYX`],
 ];
-let bad = 0, md = `# STYX on Elysium X kit\n\n## Handle\n\`\`\`\n@StyxElysium\n\`\`\`\n\n## Display name\n\`\`\`\nSTYX | $STYX\n\`\`\`\n\n## Bio (${len(BIO)}/160)\n\`\`\`\n${BIO}\n\`\`\`\n\n## Website\n\`\`\`\n${S}\n\`\`\`\n\n## Profile images\n- Avatar: \`styx-pfp.png\`\n- Header: \`styx-banner.png\`\n\n## Tweets (all ≤245)\n`;
+let bad = 0, md = `# STYX on Elysium X kit\n\n## Handle\n\`\`\`\n@StyxOnElysium\n\`\`\`\n\n## Display name\n\`\`\`\nSTYX | $STYX\n\`\`\`\n\n## Bio (${len(BIO)}/160)\n\`\`\`\n${BIO}\n\`\`\`\n\n## Website\n\`\`\`\n${S}\n\`\`\`\n\n## Profile images\n- Avatar: \`styx-pfp.png\`\n- Header: \`styx-banner.png\`\n\n## Tweets (all ≤245)\n`;
 T.forEach(([n, m, t], i) => { const k = len(t); if (k > 245) { bad++; console.log('TOO LONG', i + 1, k); } md += `\n### ${i + 1}. ${n} · ${k} chars · media: \`${m}\`\n\`\`\`\n${t}\n\`\`\`\n`; });
 if (len(BIO) > 160) { bad++; console.log('BIO', len(BIO)); }
 fs.writeFileSync(path.join(__dirname, '..', 'brand', 'X-KIT.md'), md); console.log(bad ? 'FIX' : 'all fit', T.map(([, , t]) => len(t)).join(','), 'bio', len(BIO));

@@ -15,7 +15,7 @@ const TXT = [['wallet_addEthereumChain\', params: [{ chainId: CHAIN_HEX, chainNa
  ["network: 'robinhood', chainId: 4663", "network: 'elysium', chainId: 99801"], ["p.chainId === 'robinhood'", "p.chainId === (process.env.DEX_CHAIN || 'hyperevm')"],
  ['(chainId 4663)', '(chainId 99801, Kinetiq\'s Hyperliquid L2)'], ['RH_RPCS', 'ELYSIUM_RPCS'],
  ['Robinhood Chain', 'Elysium'], ['on Robinhood', 'on Elysium'], ['Robinhood', 'Elysium'],
- ['styxrh.xyz', 'styxelysium.com'], ['StyxRH', 'StyxElysium'], ['StyxOnRH', 'StyxElysium'], ['USDG', 'USDC'], ['usdg', 'usdc']];
+ ['styxrh.xyz', 'styxelysium.com'], ['StyxRH', 'StyxOnElysium'], ['StyxOnRH', 'StyxOnElysium'], ['USDG', 'USDC'], ['usdg', 'usdc']];
 for (const f of files) { let s = fs.readFileSync(f, 'utf8').replace(/\r\n/g, '\n'), o = s;
   for (const [a, b] of COL2) s = s.split(a).join(b);
   for (const [a, b] of TXT) s = s.split(a).join(b);
