@@ -65,7 +65,7 @@ const isWallet = (s) => /^0x[a-fA-F0-9]{40}$/.test(s);
 function W(a) { a = a.toLowerCase(); return db.wallets[a] || (db.wallets[a] = { usdc: SEED.usdc, styx: SEED.styx, susd: SEED.susd, priv: SEED.priv, seeded: true }); }
 
 // ---------- chain: real USDC deposits to TREASURY, verified on-chain ----------
-const USDC = { addr: (process.env.USDC_ADDR || '').toLowerCase(), dec: +(process.env.USDC_DEC || 6) };   // USDC ERC-20 on Elysium — set USDC_ADDR
+const USDC = { addr: (process.env.USDC_ADDR || '0x7D29d8047B905000459c0E80c34a26CeedcB47b2').toLowerCase(), dec: +(process.env.USDC_DEC || 6) };   // USDC ERC-20 on Elysium — set USDC_ADDR
 const RPCS = (process.env.ELYSIUM_RPCS || 'https://testnet-rpc.elysium.kinetiq.xyz').split(',');
 const MIN_DEPOSIT = +(process.env.MIN_DEPOSIT || 50);   // USDC — smaller transfers are NOT credited
 const TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
