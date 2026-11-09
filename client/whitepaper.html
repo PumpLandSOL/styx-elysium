@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STYX Whitepaper — a private dollar for Elysium</title>
+<meta name="description" content="The STYX whitepaper: sUSD, a fractional-algorithmic stablecoin with a shielded pool, a hard USDC floor and usage-funded buyback and burn, on Elysium.">
+<link rel="canonical" href="https://styxelysium.com/whitepaper">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/client/pages.css">
+</head><body>
+<header><div class="nav"><a class="brand" href="/"><span class="mark">Ω</span><b>STYX</b></a><nav class="links"><a href="/docs">Docs</a><a href="/whitepaper" class="on">Whitepaper</a><a href="https://x.com/StyxOnElysium" target="_blank" rel="noopener">𝕏</a><a class="cta" href="/">Open app</a></nav></div></header>
+<div class="layout">
+<aside class="toc"><div class="t">Contents</div>
+<a href="#abstract">Abstract</a><a href="#problem">1. The problem</a><a href="#design">2. sUSD design</a><a href="#peg">3. Peg &amp; collateral ratio</a><a href="#floor">4. The hard floor</a><a href="#privacy">5. The shielded pool</a><a href="#disclosure">6. Selective disclosure</a><a href="#token">7. $STYX</a><a href="#reserve">8. Reserve growth</a><a href="#elysium">9. Why Elysium</a><a href="#rites">10. The rites</a><a href="#risks">11. Risks</a></aside>
+<main class="doc paper">
+<div class="eye">Whitepaper · v1 · November 2026</div>
+<h1>STYX: a private dollar <em>for Elysium</em></h1>
+<p class="sub">sUSD is a dollar you can carry unseen: fractional-algorithmic, backed by hard USDC, and spendable without revealing the amount, the sender or the recipient.</p>
+
+<h2 id="abstract">Abstract</h2>
+<p>Onchain dollars force a choice. Fiat-backed stablecoins are solid but fully public: every balance and payment is visible forever. Privacy coins hide transfers but are not dollars. The best-known algorithmic dollar, UST, was neither private nor backed, and collapsed from roughly $40B to zero in days. STYX combines a fractional-algorithmic stablecoin (sUSD) with a hard USDC floor, a shielded note pool, opt-in disclosure, and a governance token ($STYX) whose supply shrinks with usage. It runs on Elysium, Kinetiq's Hyperliquid L2.</p>
+
+<h2 id="problem">1. The problem</h2>
+<p>A trader paid in USDC broadcasts their salary. A fund moving size leaks its book. A merchant reveals revenue to every competitor. Transparency is useful for verifying reserves but harmful for users. What users want is a dollar where the <i>reserve</i> is public and the <i>holder</i> is private. STYX splits those two layers apart.</p>
+
+<h2 id="design">2. sUSD design</h2>
+<p>sUSD targets $1. Minting takes USDC only. A fraction equal to the collateral ratio (CR) becomes collateral; the remaining (1 − CR) is spent buying $STYX at market and burning it. No sUSD is created against printed tokens. Redemption burns sUSD and pays CR in USDC plus (1 − CR) in STYX. This is the fractional-algorithmic model pioneered by Frax, with two changes: the algorithmic slice is funded in hard money, and the CR has a floor.</p>
+
+<h2 id="peg">3. Peg &amp; collateral ratio</h2>
+<p>The CR moves toward a target each tick, clamped to <b>[55%, 100%]</b>. When sUSD trades below $1, the target rises, so new sUSD carries more hard USDC and redemptions pay out more collateral. Arbitrage then buys cheap sUSD and redeems it for more than $1 of value. When sUSD trades above $1, the target eases, minting becomes cheaper, and new supply pulls the price back down.</p>
+
+<h2 id="floor">4. The hard floor</h2>
+<p>Assume the worst case: $STYX goes to zero and every holder redeems at once. Because the CR cannot fall below 55%, and the CR rises under stress, each sUSD is backed by at least <b>$0.55 in USDC</b>, moving toward $1.00 as the CR ratchets up. UST had no such floor: its only backing was LUNA, the token being printed to defend it. STYX's backing is an asset the protocol cannot mint.</p>
+
+<h2 id="privacy">5. The shielded pool</h2>
+<p>Shielded sUSD lives as notes. Each note is a hash commitment to (value, owner, randomness), encrypted to its owner with x25519 key agreement and AES-GCM, and appended to a Merkle tree whose root is public. Spending a note reveals only its nullifier, a one-way tag that prevents double-spends without identifying which note was spent. A private send publishes one nullifier and one new commitment. Observers see that <i>a</i> transfer happened, never its amount or parties. Notes, Dark Pool positions and staking flows all use the same primitive, so they look identical on the ledger.</p>
+
+<h2 id="disclosure">6. Selective disclosure</h2>
+<p>Privacy that cannot be lifted is a liability for anyone with an accountant. <b>The Seal</b> derives a read-only view key per address (HMAC-SHA256 under a protocol salt). Holders hand it to a single reader, who sees that wallet's statement and nothing else. <b>Notes</b> let a sender pay by link: the claim secret lives in the URL fragment, which browsers never send to servers, and only its hash is stored.</p>
+
+<h2 id="token">7. $STYX</h2>
+<p>$STYX absorbs volatility so sUSD does not. It is bought and burned in three places: the algorithmic slice of every mint, <b>The Pyre</b> (30 bps tolls on shield, send and unshield; 50 bps on redeem; 30 bps on Dark Pool trades, swept each epoch into market buys and burns with public receipts), and every crossing a referred wallet makes (20% of its tolls go to the referrer, <b>Charon's Cut</b>, and the rest to the Pyre). The more sUSD moves, the less STYX exists.</p>
+
+<h2 id="reserve">8. Reserve growth</h2>
+<p><b>Bonds</b> sell STYX at 20% below market for USDC, vested over 5 days. <b>The Forge</b> sells at 30% below market with a 48-hour lock and 80% APY. In both, the USDC enters the reserve and mints no sUSD, so the reserve rises above outstanding liabilities. <b>The Vigil</b> rewards sUSD stakers in STYX (40% base APY, boosted to 100% through November 16, 2026), drawing sUSD out of circulation and into commitment.</p>
+
+<h2 id="elysium">9. Why Elysium</h2>
+<p>Elysium is an Arbitrum Orbit chain built by Kinetiq that settles to HyperEVM and uses HYPE for gas. It gives STYX the Hyperliquid user base, cheap fast blocks and native USDC liquidity. That base trades size daily and has the most to lose from public balances. A private dollar is the missing piece.</p>
+
+<h2 id="rites">10. The rites</h2>
+<table><tr><th>Rite</th><th>Scope</th><th>Status</th></tr>
+<tr><td>I · Strike</td><td>sUSD mint/redeem, real USDC deposits verified on Elysium, The Pyre, Bonds, The Vigil</td><td>Live</td></tr>
+<tr><td>II · Carry</td><td>Shielded pool, private send, unshield</td><td>Live</td></tr>
+<tr><td>III · Pay across</td><td>Notes, The Seal, Charon's Cut, Dark Pool, The Forge</td><td>Live</td></tr>
+<tr><td>IV · Prove</td><td>Solidity sUSD + vault contracts on Elysium and zero-knowledge spend proofs</td><td>Next</td></tr></table>
+<p>In Rites I to III, deposits and the treasury are on-chain and verifiable, while the peg engine, collateral accounting and shielded ledger run in the STYX service. Rite IV moves those onto Elysium as contracts.</p>
+
+<h2 id="risks">11. Risks</h2>
+<p>Stablecoins can lose their peg. A 55% floor bounds losses but does not prevent them. $STYX can fall in price. The Dark Pool makes the protocol the counterparty to traders. Withdrawals are paid from a queue by the treasury. Smart-contract and custody risk shift as the rites progress. Read the <a href="/docs">docs</a> and never deposit more than you can afford to lose.</p>
+<p class="foot">STYX · <a href="https://styxelysium.com">styxelysium.com</a> · <a href="https://x.com/StyxOnElysium">@StyxOnElysium</a></p>
+</main></div>
+<footer>STYX · sUSD / $STYX · private dollars on Elysium</footer>
+</body></html>

@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STYX Docs — private dollars on Elysium</title>
+<meta name="description" content="STYX docs: how to strike, shield, send and redeem sUSD on Elysium, plus Bonds, The Forge, The Vigil, The Pyre, Notes, The Seal, Charon's Cut and the Dark Pool.">
+<link rel="canonical" href="https://styxelysium.com/docs">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/client/pages.css">
+</head><body>
+<header><div class="nav"><a class="brand" href="/"><span class="mark">Ω</span><b>STYX</b></a><nav class="links"><a href="/docs" class="on">Docs</a><a href="/whitepaper">Whitepaper</a><a href="https://x.com/StyxOnElysium" target="_blank" rel="noopener">𝕏</a><a class="cta" href="/">Open app</a></nav></div></header>
+<div class="layout">
+<aside class="toc"><div class="t">On this page</div>
+<a href="#start">Quick start</a><a href="#chain">Network</a><a href="#deposit">Deposit USDC</a><a href="#mint">Strike sUSD</a><a href="#shield">Shield &amp; send</a><a href="#redeem">Redeem &amp; withdraw</a><a href="#pyre">The Pyre</a><a href="#bonds">Bonds</a><a href="#forge">The Forge</a><a href="#vigil">The Vigil</a><a href="#notes">Notes</a><a href="#seal">The Seal</a><a href="#ferry">Charon's Cut</a><a href="#dark">Dark Pool</a><a href="#fees">Fees &amp; limits</a><a href="#api">Public API</a></aside>
+<main class="doc">
+<div class="eye">Documentation</div>
+<h1>Using <em>STYX</em></h1>
+<p class="sub">Everything you need to cross: from your first USDC deposit to a private payment nobody can trace.</p>
+
+<h2 id="start">Quick start</h2>
+<ol><li>Open <a href="/">styxelysium.com</a> and press <b>Connect</b>. Your wallet is switched to Elysium automatically (or Elysium is added for you).</li>
+<li>Send at least <b>50 USDC</b> on Elysium to the treasury from the Deposit tab. It is credited once the receipt confirms.</li>
+<li><b>Mint</b> sUSD with your deposited USDC.</li>
+<li><b>Shield</b> sUSD into the private pool, then <b>Send</b> it to any Elysium address. The amount and both parties never appear on the public ledger.</li></ol>
+
+<h2 id="chain">Network</h2>
+<table><tr><td>Chain</td><td>Elysium (Kinetiq's Hyperliquid L2, settles to HyperEVM)</td></tr>
+<tr><td>Chain ID</td><td><code>99801</code> (<code>0x185d9</code>)</td></tr>
+<tr><td>Gas token</td><td>HYPE</td></tr>
+<tr><td>RPC</td><td><code>https://testnet-rpc.elysium.kinetiq.xyz</code></td></tr>
+<tr><td>Explorer</td><td><code>https://test-explorer.elysium.kinetiq.xyz</code></td></tr>
+<tr><td>Deposit asset</td><td>USDC <code>0x7D29d8047B905000459c0E80c34a26CeedcB47b2</code> (6 decimals)</td></tr>
+<tr><td>Wallets</td><td>MetaMask, Rabby or any EVM wallet</td></tr></table>
+<p>You need a little HYPE on Elysium for gas. Bridge it from Hyperliquid using Kinetiq's official bridge.</p>
+
+<h2 id="deposit">Deposit USDC</h2>
+<p>Deposits are real ERC-20 USDC transfers to the public treasury address shown in the app. The server reads the transaction receipt from the Elysium RPC and credits only <code>Transfer</code> logs from the USDC contract, sent from your wallet to the treasury. Transfers below the <b>50 USDC minimum</b> are not credited. If your wallet closes before the app sees the hash, paste the transaction hash into the Deposit tab and it is credited the same way. The treasury's on-chain USDC balance is displayed live, so anyone can check the reserve.</p>
+
+<h2 id="mint">Strike sUSD</h2>
+<p>sUSD is pegged to $1. When you mint, your USDC is split by the current <b>collateral ratio (CR)</b>. The CR share goes to collateral. The rest, the algorithmic share, is spent buying $STYX at market and burning it. Nothing is printed to mint sUSD. The CR floats between <b>55% and 100%</b>: when sUSD trades below $1 it rises (more hard USDC behind every unit), and when sUSD trades above $1 it eases.</p>
+
+<h2 id="shield">Shield &amp; send</h2>
+<p><b>Shield</b> moves public sUSD into the private pool. Each note is a hash commitment, encrypted only to its owner with x25519 + AES-GCM, and added to a Merkle tree. <b>Send</b> spends your note and writes a new one for the recipient. On the ledger that is one nullifier and one new commitment: no amount, no sender, no recipient. <b>Unshield</b> moves private sUSD back to your public balance at any time.</p>
+
+<h2 id="redeem">Redeem &amp; withdraw</h2>
+<p><b>Redeem</b> burns public sUSD and returns the CR share in USDC plus the remainder in STYX. Unshield private sUSD first. <b>Withdraw</b> moves USDC (or vested STYX) from your ledger into the payout queue. The treasury pays queued withdrawals on-chain and the app marks each one paid with its transaction hash.</p>
+
+<h2 id="pyre">The Pyre</h2>
+<p>A ferry toll on every crossing: <b>30 bps</b> on shield, send and unshield, <b>50 bps</b> on redeem. Tolls gather in USDC. Each epoch the protocol buys $STYX at market and burns it, and every burn is posted as a public receipt. More use means more burn.</p>
+
+<h2 id="bonds">Bonds</h2>
+<p>Deposit USDC and receive <b>$STYX at 20% below market</b>, vesting linearly over <b>5 days</b>. Claim vested STYX whenever you like. Bond USDC goes into the reserve and mints no sUSD, so every bond adds collateral above what sUSD needs. Minimum 50 USDC, capacity 5,000 USDC per day, open through <b>December 9, 2026</b>.</p>
+
+<h2 id="forge">The Forge</h2>
+<p>A locked bond: <b>30% below market</b>, locked for <b>48 hours</b>, and earning <b>80% APY</b> while locked. It is the deepest discount for the most patient capital.</p>
+
+<h2 id="vigil">The Vigil</h2>
+<p>Stake sUSD and earn STYX, priced in sUSD terms. The base rate is <b>40% APY</b>, boosted to <b>100% APY through November 16, 2026</b>. The season pool is 5,000,000 STYX with a protocol-wide cap of 250,000 sUSD, and the season ends December 9, 2026. Unstaking pays the 30 bps toll.</p>
+
+<h2 id="notes">Notes</h2>
+<p>Pay anyone with a link. Create a Note for an amount and you get a URL whose secret lives in the <code>#fragment</code>. Fragments never reach the server, which stores only the secret's SHA-256 hash. Whoever opens the link first claims the sUSD into their private balance. Each Note can be claimed once.</p>
+
+<h2 id="seal">The Seal</h2>
+<p>Selective disclosure. The Seal produces a view key for your address (HMAC-SHA256 under a server salt). Share it with one reader, such as an accountant or counterparty, and they see your private statement at <code>/view</code>, read-only. No one else sees anything.</p>
+
+<h2 id="ferry">Charon's Cut</h2>
+<p>Share <code>styxelysium.com/?ref=0xYOURADDRESS</code>. The first time a wallet arrives through your link, or claims a Note you sent, it is bound to you for good. You earn <b>20% of every toll</b> it pays, credited to your public sUSD. Self-referral is not allowed. The top ferrymen appear on a redacted leaderboard.</p>
+
+<h2 id="dark">Dark Pool</h2>
+<p>Shielded 1x long or short exposure to HOOD, TSLA, NVDA, AAPL, SPY, COIN, MSTR, GLD, BTC and ETH, priced off a live market tape (polled every 30 seconds; trading pauses if the tape is older than 15 minutes). Positions settle in shielded sUSD, with a 30 bps fee to the Pyre. The maximum position is 1,000 sUSD and the maximum open interest is 25,000. Shorts close automatically at a 95% loss. Metrics show counts and volume, never anyone's notional.</p>
+
+<h2 id="fees">Fees &amp; limits</h2>
+<table><tr><th>Action</th><th>Fee / limit</th></tr>
+<tr><td>Shield · Send · Unshield</td><td>30 bps → Pyre (20% to your ferryman)</td></tr>
+<tr><td>Redeem</td><td>50 bps → Pyre</td></tr>
+<tr><td>Dark Pool open/close</td><td>30 bps → Pyre</td></tr>
+<tr><td>Minimum deposit</td><td>50 USDC</td></tr>
+<tr><td>Minimum withdrawal</td><td>1 USDC</td></tr>
+<tr><td>Bonds</td><td>min 50 · 5,000 USDC/day</td></tr></table>
+
+<h2 id="api">Public API</h2>
+<p>Every number on the site comes from open endpoints:</p>
+<pre>GET  /api/metrics   peg, CR, supply, reserve, pyre, vigil, bonds, chain
+GET  /api/config    chain, treasury, mint
+POST /api/account   { wallet }  your balances (public + private)
+POST /api/view      { key }     sealed statement for a view key</pre>
+<p class="foot">Questions? <a href="https://x.com/StyxOnElysium">@StyxOnElysium</a> · Read the design in the <a href="/whitepaper">whitepaper</a>.</p>
+</main></div>
+<footer>STYX · sUSD / $STYX · private dollars on Elysium</footer>
+</body></html>
